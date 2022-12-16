@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="377.585" height="373.253" viewBox="0 0 377.585 373.253">
+  <defs>
+    <filter id="Rectangle_1054" x="32.5" y="161.148" width="46" height="53" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.5" result="blur"/>
+      <feFlood flood-opacity="0.275"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Intersection_23" x="77.482" y="96.088" width="57.527" height="120.734" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="3" result="blur-2"/>
+      <feFlood flood-opacity="0.392"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Intersection_24" x="131.612" y="43.735" width="51.242" height="132.384" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.5" result="blur-3"/>
+      <feFlood flood-opacity="0.275"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Intersection_25" x="183.241" y="87.797" width="51.708" height="56.497" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="1.5" result="blur-4"/>
+      <feFlood flood-opacity="0.275"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="Groupe_416" data-name="Groupe 416" transform="translate(-4465 -4711.521)">
+    <g id="Groupe_415" data-name="Groupe 415" transform="translate(4465 4711.521)">
+      <path id="Tracé_3255" data-name="Tracé 3255" d="M188.793,0C293.06,0,377.585,83.556,377.585,186.627S293.06,373.253,188.793,373.253,0,289.7,0,186.627,84.525,0,188.793,0Z" fill="#082151"/>
+      <g id="Tracé_3261" data-name="Tracé 3261" transform="translate(136.112 68.797)" fill="#407bff">
+        <path d="M 23.46754264831543 259.8941955566406 L 18.77400779724121 259.8941955566406 C 13.88867568969727 259.8941955566406 9.296841621398926 258.0754699707031 5.844408512115479 254.7730255126953 C 2.398008584976196 251.4763946533203 0.5000085830688477 247.0950317382812 0.5000085830688477 242.4359588623047 L 0.5000085830688477 17.95823097229004 C 0.5000085830688477 13.29916477203369 2.398008584976196 8.917798042297363 5.844408512115479 5.621164321899414 C 9.296841621398926 2.318731069564819 13.88867568969727 0.4999977648258209 18.77400779724121 0.4999977648258209 L 23.46754264831543 0.4999977648258209 C 28.35287475585938 0.4999977648258209 32.94470977783203 2.318731069564819 36.39714050292969 5.621164321899414 C 39.84354019165039 8.917798042297363 41.74154281616211 13.29916477203369 41.74154281616211 17.95823097229004 L 41.74154281616211 160.0181274414062 L 41.74154281616211 242.4359588623047 C 41.74154281616211 247.0950317382812 39.84354019165039 251.4763946533203 36.39714050292969 254.7730255126953 C 32.94470977783203 258.0754699707031 28.35287475585938 259.8941955566406 23.46754264831543 259.8941955566406 Z" stroke="none"/>
+        <path d="M 18.77400779724121 1 C 14.01804161071777 1 9.548976898193359 2.76947021484375 6.190010070800781 5.982467651367188 C 2.843173980712891 9.183868408203125 1.000007629394531 13.43693542480469 1.000007629394531 17.95823669433594 L 1.000007629394531 242.4359588623047 C 1.000007629394531 246.9572601318359 2.843173980712891 251.2103271484375 6.190010070800781 254.4117279052734 C 9.548976898193359 257.6247253417969 14.01804161071777 259.3941955566406 18.77400779724121 259.3941955566406 L 23.46754264831543 259.3941955566406 C 28.22350883483887 259.3941955566406 32.69257354736328 257.6247253417969 36.05154037475586 254.4117279052734 C 39.39837646484375 251.2103271484375 41.24154281616211 246.9572601318359 41.24154281616211 242.4359588623047 L 41.24154281616211 160.0181274414062 L 41.24154281616211 17.95823669433594 C 41.24154281616211 13.43693542480469 39.39837646484375 9.183868408203125 36.05154037475586 5.982467651367188 C 32.69257354736328 2.76947021484375 28.22350883483887 1 23.46754264831543 1 L 18.77400779724121 1 M 18.77400779724121 0 L 23.46754264831543 0 C 33.83614349365234 0 42.24154281616211 8.0401611328125 42.24154281616211 17.95823669433594 L 42.24154281616211 160.0181274414062 L 42.24154281616211 242.4359588623047 C 42.24154281616211 252.3540344238281 33.83614349365234 260.3941955566406 23.46754264831543 260.3941955566406 L 18.77400779724121 260.3941955566406 C 8.405406951904297 260.3941955566406 7.62939453125e-06 252.3540344238281 7.62939453125e-06 242.4359588623047 L 7.62939453125e-06 17.95823669433594 C 7.62939453125e-06 8.0401611328125 8.405406951904297 0 18.77400779724121 0 Z" stroke="none" fill="#407bff"/>
+      </g>
+      <g id="Rectangle_678" data-name="Rectangle 678" transform="translate(188 91.648)" fill="#407bff" stroke="#407bff" stroke-width="1">
+        <rect width="42" height="208" rx="21" stroke="none"/>
+        <rect x="0.5" y="0.5" width="41" height="207" rx="20.5" fill="none"/>
+      </g>
+      <g id="Rectangle_679" data-name="Rectangle 679" transform="translate(240 133.648)" fill="#407bff" stroke="#407bff" stroke-width="1">
+        <rect width="39" height="107" rx="19.5" stroke="none"/>
+        <rect x="0.5" y="0.5" width="38" height="106" rx="19" fill="none"/>
+      </g>
+      <g id="Rectangle_680" data-name="Rectangle 680" transform="translate(292 96.648)" fill="#407bff" stroke="#407bff" stroke-width="1">
+        <rect width="39" height="186" rx="19.5" stroke="none"/>
+        <rect x="0.5" y="0.5" width="38" height="185" rx="19" fill="none"/>
+      </g>
+      <g id="Rectangle_681" data-name="Rectangle 681" transform="translate(87 108.648)" fill="#407bff" stroke="#407bff" stroke-width="1">
+        <rect width="39" height="182" rx="19.5" stroke="none"/>
+        <rect x="0.5" y="0.5" width="38" height="181" rx="19" fill="none"/>
+      </g>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 4465, 4711.52)" filter="url(#Rectangle_1054)">
+      <rect id="Rectangle_1054-2" data-name="Rectangle 1054" width="37" height="44" rx="18.5" transform="translate(37 162.65)" fill="#c8d9ff"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 4465, 4711.52)" filter="url(#Intersection_23)">
+      <path id="Intersection_23-2" data-name="Intersection 23" d="M0,19.763a19.764,19.764,0,0,1,39.527,0v57.88L0,102.734Z" transform="translate(86.48 99.09)" fill="#c8d9ff"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 4465, 4711.52)" filter="url(#Intersection_24)">
+      <path id="Intersection_24-2" data-name="Intersection 24" d="M0,21A21,21,0,0,1,21,0h.241a21,21,0,0,1,21,21V96.984L0,123.384Z" transform="translate(136.11 45.23)" fill="#c8d9ff"/>
+    </g>
+    <g transform="matrix(1, 0, 0, 1, 4465, 4711.52)" filter="url(#Intersection_25)">
+      <path id="Intersection_25-2" data-name="Intersection 25" d="M0,21A21,21,0,0,1,21,0h.708a21,21,0,0,1,21,21v.235L0,47.5Z" transform="translate(187.74 89.3)" fill="#c8d9ff"/>
+    </g>
+  </g>
+</svg>

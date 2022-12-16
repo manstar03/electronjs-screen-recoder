@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>Noota - Turn your voice into insight</title>
+  <meta name="description" content="" />
+  <meta name="theme-color" content="#021c4d" />
+  <meta property="og:description" content="Noota - Et vos conversations prennent vie." />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/libraries/nice-select.css" />
+  <link rel="stylesheet" href="../css/popup.css" />
+</head>
+<body>
+  <div id="div_connection" class="input-group">
+    <div class="row logo_row">
+      <img href="https://app.noota.io" src="../assets/images/popup/logo2.png" class="logo img-responsive mb-4 mb-md-6" alt=""
+        style="align-self: center; width: 20%; margin: 0 auto; display: block;  margin-top: 5px;" />
+    </div>
+    <p style="margin: 5px; text-align: center">
+      You are not connected to your Noota account.<br>
+    </p>
+    <div class="row row_login" style="text-align: center">
+      <button type="submit" name="Connection" class="zoom" id="connect_id">
+        Login
+      </button>
+    </div>
+    <div class="row row_login" style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+  ">
+      <a class="chillbtn" target="_blank" href="https://www.app.noota.io/?arg=register" style="text-decoration: none">Register here</a>
+    </div>
+    <div class="row row_login" style="
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+  ">
+      <span name="Skip" class="chillbtn" id="skip_button">➡ Continue as anonymous user</span>
+    </div>
+  </div>
+  <div id="popup_original" style="display: none">
+    <div id="recording_ap">
+      <div class="navhead">
+        <div id="logo_" style="text-align: center">
+          <img href="https://app.noota.io" src="../assets/images/popup/logo_noota.png" class="logo img-responsive mb-4 mb-md-6" alt=""
+            style="align-self: center; width: 30%" />
+        </div>
+        <div id="more-select">
+          <a id="shortcuts">keyboard shortcut</a>
+          <a id="quality">Smaller file size</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="loadingPorFavor" style="display:none;">
+    <span class="loader"></span>
+  </div>
+
+  <div id="mainCtnr" style="background-color: white; width: 100%;display:none;">
+    <div id="main_panel_before" style="display: none">
+      <div id="BoxTitle">
+        <div style="  display: flex;
+        justify-content: center;
+        flex-direction: column;
+        align-items: center;">
+          <input type="search" autocomplete="off" id="recordAudio" name="recordAudio" maxlength="118" value="My record">
+          <label for="recordAudio" id="labelRecordAudio">
+            <svg fill="#b4b4b4" style="position: absolute;right: 70px;top: 2px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="18"
+              height="18">
+              <path
+                d="M490.3 40.4C512.2 62.27 512.2 97.73 490.3 119.6L460.3 149.7L362.3 51.72L392.4 21.66C414.3-.2135 449.7-.2135 471.6 21.66L490.3 40.4zM172.4 241.7L339.7 74.34L437.7 172.3L270.3 339.6C264.2 345.8 256.7 350.4 248.4 353.2L159.6 382.8C150.1 385.6 141.5 383.4 135 376.1C128.6 370.5 126.4 361 129.2 352.4L158.8 263.6C161.6 255.3 166.2 247.8 172.4 241.7V241.7zM192 63.1C209.7 63.1 224 78.33 224 95.1C224 113.7 209.7 127.1 192 127.1H96C78.33 127.1 64 142.3 64 159.1V416C64 433.7 78.33 448 96 448H352C369.7 448 384 433.7 384 416V319.1C384 302.3 398.3 287.1 416 287.1C433.7 287.1 448 302.3 448 319.1V416C448 469 405 512 352 512H96C42.98 512 0 469 0 416V159.1C0 106.1 42.98 63.1 96 63.1H192z" />
+            </svg>
+          </label>
+        </div>
+        <div style="  height: 42px;">
+          <button id="folderBtnn" style="display:none;">
+            <svg id="folderKO" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20" fill="#939393">
+              <!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+              <path d="M512 144v288c0 26.5-21.5 48-48 48h-416C21.5 480 0 458.5 0 432v-352C0 53.5 21.5 32 48 32h160l64 64h192C490.5 96 512 117.5 512 144z" />
+            </svg>
+
+            <svg id="folderOK" style="display:none;" fill="#001f63" xmlns=" http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20" height="20">
+              <!--! Font Awesome Pro 6.1.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+              <path d="M512 144v288c0 26.5-21.5 48-48 48h-416C21.5 480 0 458.5 0 432v-352C0 53.5 21.5 32 48 32h160l64 64h192C490.5 96 512 117.5 512 144z" />
+            </svg>
+          </button>
+          <select style="display:none;" name="addToFolders" id="addToFolders" class="dropdown-select">
+            <option id="dfltId" value="default" selected>No folder</option>
+          </select>
+        </div>
+      </div>
+
+
+      <div id="containerEmailSS">
+        <input type="search" autocomplete="off" id="recordEmail" name="recordEmail" maxlength="180" placeholder="Email">
+
+        <div id="wrmail" style="width:40px;height:42px;cursor:unset;">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" height="23" width="23" fill="#939393">
+            <!--! Font Awesome Pro 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+            <path
+              d="M263.4 16.12C198.2 14.06 136.2 38.14 89.31 83.67C42.03 129.5 16 191.2 16 257.2c0 118.6 87.89 221.1 204.5 238.5C221.7 495.9 222.8 496 224 496c11.69 0 21.92-8.547 23.7-20.45c1.953-13.11-7.078-25.33-20.19-27.28C134.3 434.3 64 352.2 64 257.2c0-52.94 20.86-102.3 58.73-139.1c37.53-36.41 86.25-55.83 139.2-54.03C364.5 67.2 448 157.9 448 266.3v19.05c0 24.45-19.73 44.36-44 44.36S360 309.8 360 285.3V168.7c0-13.25-10.75-23.1-24-23.1c-11.92 0-21.38 8.855-23.24 20.25C294.4 151.9 272.2 144 248 144c-61.75 0-112 50.25-112 111.1s50.25 111.1 112 111.1c30.75 0 58.62-12.48 78.88-32.62c16.41 25.4 44.77 42.32 77.12 42.32c50.73 0 92-41.44 92-92.36V266.3C496 132.2 391.6 19.1 263.4 16.12zM248 320c-35.3 0-64-28.7-64-63.1c0-35.29 28.7-63.1 64-63.1s64 28.7 64 63.1C312 291.3 283.3 320 248 320z" />
+          </svg>
+        </div>
+      </div>
+      <label id="language_select_inputlabel" for="language_select_input">Language</label>
+      <select name="language" id="language_select_input">
+        <option value="en-US" selected>English (US)</option>
+        <option value="en-GB">English (UK)</option>
+        <option value="fr-FR">French (France)</option>
+        <option value="es-ES">Spanish (Spain) / Castillan</option>
+        <option value="es-CL">Spanish (Chili)</option>
+        <option value="de-DE">Deutsch (Germany)</option>
+        <option value="af-ZA">Afrikaans (South Africa)</option>
+        <option value="am-ET">Amharic (Ethiopia)</option>
+        <option value="ar-DZ">Arabic (Algeria)</option>
+        <option value="ar-BH">Arabic (Bahrain)</option>
+        <option value="ar-EG">Arabic (Egypt)</option>
+        <option value="ar-IQ">Arabic (Iraq)</option>
+        <option value="ar-IL">Arabic (Israel)</option>
+        <option value="ar-JO">Arabic (Jordan)</option>
+        <option value="ar-KW">Arabic (Kuwait)</option>
+        <option value="ar-LB">Arabic (Lebanon)</option>
+        <option value="ar-LY">Arabic (Libya)</option>
+        <option value="ar-MA">Arabic (Morocco)</option>
+        <option value="ar-OM">Arabic (Oman)</option>
+        <option value="ar-PS">Arabic (Palestinian)</option>
+        <option value="ar-QA">Arabic (Qatar)</option>
+        <option value="ar-SA">Arabic (Saudi Arabia)</option>
+        <option value="ar-SY">Arabic (Syria)</option>
+        <option value="ar-TN">Arabic (Tunisia)</option>
+        <option value="ar-AE">Arabic (United Arab Emirates)</option>
+        <option value="ar-YE">Arabic (Yemen)</option>
+        <option value="bn-IN">Bengali</option>
+        <option value="bg-BG">Bulgarian (Bulgaria)</option>
+        <option value="my-MM">Burma (Burma)</option>
+        <option value="ca-ES">Catalan (Spain)</option>
+        <option value="zh-HK">Chinese (Cantonese, traditional)</option>
+        <option value="zh-CN">Chinese (Mandarin, simplified)</option>
+        <option value="zh-TW">Chinese (Mandarin, Taiwanese)</option>
+        <option value="si-LK">Cingalese (Sri Lanka)</option>
+        <option value="hr-HR">Croatian (Croatia)</option>
+        <option value="cs-CZ">Czech (Czech Republic)</option>
+        <option value="da-DK">Danish (Denmark)</option>
+        <option value="nl-BE">Dutch (Belgium)</option>
+        <option value="nl-NL">Dutch (Netherlands)</option>
+        <option value="en-AU">English (Australia)</option>
+        <option value="en-CA">English (Canada)</option>
+        <option value="en-GH">English (Ghana)</option>
+        <option value="en-HK">English (Hong Kong)</option>
+        <option value="en-IN">English (India)</option>
+        <option value="en-IE">English (Ireland)</option>
+        <option value="en-KE">English (Kenya)</option>
+        <option value="en-NZ">English (New Zealand)</option>
+        <option value="en-NG">English (Nigeria)</option>
+        <option value="en-PH">English (Philippines)</option>
+        <option value="en-SG">English (Singapore)</option>
+        <option value="en-ZA">English (South Africa)</option>
+        <option value="en-TZ">English (Tanzania)</option>
+        <option value="et-EE">Estonian (Estonia)</option>
+        <option value="fil-PH">Filipino (Philippines) </option>
+        <option value="fi-FI">Finnish (Finland)</option>
+        <option value="fr-BE">French (Belgium)</option>
+        <option value="fr-CA">French (Canada)</option>
+        <option value="fr-CH">French (Switzerland)</option>
+        <option value="de-AT">German (Austria)</option>
+        <option value="de-CH">German (Switzerland)</option>
+        <option value="el-GR">Greek (Greece)</option>
+        <option value="gu-IN">Gujarati (India)</option>
+        <option value="he-IL">Hebrew (Israel)</option>
+        <option value="hi-IN">Hindi (India)</option>
+        <option value="hu-HU">Hungarian (Hungary)</option>
+        <option value="is-IS">Icelandic (Iceland)</option>
+        <option value="id-ID">Indonesian (Indonesia)</option>
+        <option value="ga-IE">Irish (Ireland)</option>
+        <option value="it-IT">Italian (Italy)</option>
+        <option value="ja-JP">Japanese (Japan)</option>
+        <option value="jv-ID">Javanese (Indonesia)</option>
+        <option value="kn-IN">Kannada (India)</option>
+        <option value="km-KH">Khmer (Cambodia)</option>
+        <option value="ko-KR">Korean (Korea)</option>
+        <option value="lo-LA">Lao (Laos)</option>
+        <option value="lv-LV">Latvian (Latvia)</option>
+        <option value="lt-LT">Lithuanian (Lithuania)</option>
+        <option value="mk-MK">Macedonian (North Macedonia)</option>
+        <option value="ms-MY">Malaysia (Malaysia)</option>
+        <option value="mt-MT">Maltais (Malta)</option>
+        <option value="mr-IN">Marathi (India)</option>
+        <option value="nb-NO">Norwegian (Bokmål)</option>
+        <option value="fa-IR">Persian (Iran)</option>
+        <option value="pl-PL">Polish (Poland)</option>
+        <option value="pt-BR">Portuguese (Brazil)</option>
+        <option value="pt-PT">Portuguese (Portugal)</option>
+        <option value="ro-RO">Romanian (Romania)</option>
+        <option value="ru-RU">Russian (Russia)</option>
+        <option value="sr-RS">Serbian (Serbia)</option>
+        <option value="so-SO">Somali</option>
+        <option value="sk-SK">Slovak (Slovakia)</option>
+        <option value="sl-SI">Slovenian (Slovenia)</option>
+        <option value="es-AR">Spanish (Argentina)</option>
+        <option value="es-BO">Spanish (Bolivia)</option>
+        <option value="es-CO">Spanish (Colombia)</option>
+        <option value="es-CR">Spanish (Costa Rica)</option>
+        <option value="es-CU">Spanish (Cuba)</option>
+        <option value="es-DO">Spanish (Dominican Republic)</option>
+        <option value="es-EC">Spanish (Ecuador)</option>
+        <option value="es-SV">Spanish (Salvador)</option>
+        <option value="es-GQ">Spanish (Equatorial Guinea)</option>
+        <option value="es-GT">Spanish (Guatemala)</option>
+        <option value="es-HN">Spanish (Honduras)</option>
+        <option value="es-MX">Spanish (Mexico)</option>
+        <option value="es-NI">Spanish (Nicaragua)</option>
+        <option value="es-PA">Spanish (Panama)</option>
+        <option value="es-PY">Spanish (Paraguay)</option>
+        <option value="es-PE">Spanish (Peru)</option>
+        <option value="es-PR">Spanish (Puerto Rico)</option>
+        <option value="es-UY">Spanish (Uruguay)</option>
+        <option value="es-US">Spanish (United States)</option>
+        <option value="es-VE">Spanish (Venezuela)</option>
+        <option value="sw-KE">Swahili (Kenya)</option>
+        <option value="sw-TZ">Swahili (Tanzania)</option>
+        <option value="sv-SE">Swedish (Sweden)</option>
+        <option value="ta-IN">Tamil (India)</option>
+        <option value="te-IN">Telugu (India)</option>
+        <option value="th-TH">Thai (Thailand)</option>
+        <option value="tr-TR">Turkish (Turkey)</option>
+        <option value="uk-UA">Ukrainian (Ukraine)</option>
+        <option value="uz-UZ">Ouzbek (Ouzbekistan)</option>
+        <option value="vi-VN">Vietnamese (Vietnam)</option>
+        <option value="zu-ZA">Zoulou (South Africa)</option>
+      </select>
+
+      <div id="containerGuideline">
+        <label id="guideline_select_label" for="guideline_select_input">Guideline</label>
+        <select name="guideline_select_input" id="guideline_select_input">
+          <option value="default" selected>No guideline</option>
+        </select>
+      </div>
+
+      <label class="check">
+        <input id="flip_transcript" type="checkbox" />
+        <span></span>
+        <labelp id="trs-label">Turn off transcription</labelp>
+      </label>
+
+
+      <label style="display:none;" id="language_translate_select_inputlabel" for="language_translate_select_input">Real time translation</label>
+      <select style="display:none;" name="language" id="language_translate_select_input">
+        <option value="default" selected>Sélectionner</option>
+        <option value="FR">Français (France)</option>
+        <option value="EN-US">English (United-States)</option>
+        <option value="EN-GB">English (United-Kingdoms)</option>
+        <option value="ES">Spanish (Spain) / Castillan</option>
+        <option value="CL">Spanish (Chili) / Catallan</option>
+        <option value="DE">Deutsch (Allemagne)</option>
+        <option value="ZA">Afrikaans (Afrique du Sud)</option>
+        <option value="ET">Amharique (Éthiopie)</option>
+        <option value="DZ">Arabe (Algérie)</option>
+        <option value="BH">Arabe (Bahreïn), standard moderne</option>
+        <option value="EG">Arabe (Égypte)</option>
+        <option value="IQ">Arabe (Irak)</option>
+        <option value="IL">Arabe (Israël)</option>
+        <option value="JO">Arabe (Jordanie)</option>
+        <option value="KW">Arabe (Koweït)</option>
+        <option value="LB">Arabe (Liban)</option>
+        <option value="LY">Arabe (Libye)</option>
+        <option value="MA">Arabe (Maroc)</option>
+        <option value="OM">Arabe (Oman)</option>
+        <option value="PS">Arabe (Autorité palestinienne)</option>
+        <option value="QA">Arabe (Qatar)</option>
+        <option value="SA">Arabe (Arabie saoudite)</option>
+        <option value="SY">Arabe (Syrie)</option>
+        <option value="TN">Arabe (Tunisie)</option>
+        <option value="AE">Arabe (Émirats arabes unis)</option>
+        <option value="YE">Arabe (Yémen)</option>
+        <option value="BG">Bulgare (Bulgarie)</option>
+        <option value="MM">Birman (Birmanie)</option>
+        <option value="EG">Catalan (Espagne)</option>
+        <option value="HK">Chinois (cantonais, traditionnel)</option>
+        <option value="CN">Chinois (mandarin, simplifié)</option>
+        <option value="TW">Chinois (mandarin, taïwanais)</option>
+        <option value="HR">Croate (Croatie)</option>
+        <option value="CZ">Tchèque (Tchéquie)</option>
+        <option value="DK">Danois (Danemark)</option>
+        <option value="BE">Néerlandais (Belgique)</option>
+        <option value="NL">Néerlandais (Pays-Bas)</option>
+        <option value="AU">English (Australie)</option>
+        <option value="CA">English (Canada)</option>
+        <option value="GH">English (Ghana)</option>
+        <option value="HK">English (Hong Kong)</option>
+        <option value="IE">English (Irlande)</option>
+        <option value="KE">English (Kenya)</option>
+        <option value="NZ">English (Nouvelle-Zélande)</option>
+        <option value="NG">English (Nigeria)</option>
+        <option value="PH">English (Philippines)</option>
+        <option value="SG">English (Singapour)</option>
+        <option value="ZA">English (Afrique du Sud)</option>
+        <option value="TZ">English (Tanzanie)</option>
+        <option value="EE">Estonien (Estonie)</option>
+        <option value="PH">Filipino (Philippines)</option>
+        <option value="FI">Finnois (Finlande)</option>
+        <option value="BE">Français (Belgique)</option>
+        <option value="CA">Français (Canada)</option>
+        <option value="CH">Français (Suisse)</option>
+        <option value="AT">Allemand (Autriche)</option>
+        <option value="CH">Allemand (Suisse)</option>
+        <option value="GR">Grec (Grèce)</option>
+        <option value="IN">Goudjrati (Inde)</option>
+        <option value="IL">Hébreu (Israël)</option>
+        <option value="IN">Hindi (Inde)</option>
+        <option value="HU">Hongrois (Hongrie)</option>
+        <option value="IS">Islandais (Islande)</option>
+        <option value="ID">Indonésien (Indonésie)</option>
+        <option value="IE">Irlandais (Irlande)</option>
+        <option value="IT">Italien (Italie)</option>
+        <option value="JP">Japonais (Japon)</option>
+        <option value="ID">Javanais (Indonésie)</option>
+        <option value="IN">Kannada (Inde)</option>
+        <option value="KH">Khmer (Cambodge)</option>
+        <option value="KR">Coréen (Corée)</option>
+        <option value="LA">Lao (Laos)</option>
+        <option value="LV">Letton (Lettonie)</option>
+        <option value="LT">Lituanien (Lituanie)</option>
+        <option value="MK">Macédonien (Macédoine du Nord)</option>
+        <option value="MY">Malais (Malaisie)</option>
+        <option value="MT">Maltais (Malte)</option>
+        <option value="IN">Marathi (Inde)</option>
+        <option value="NO">Norvégien (bokmål, Norvège)</option>
+        <option value="IR">Persan (Iran)</option>
+        <option value="PL">Polonais (Pologne)</option>
+        <option value="PT-BR">Portugais (Brésil)</option>
+        <option value="PT-PT">Portugais (Portugal)</option>
+        <option value="RO">Roumain (Roumanie)</option>
+        <option val="ru-RU">Russe (Russie)</option>
+        <option value="RS">Serbe (Serbie)</option>
+        <option value="LK">Cingalais (Sri Lanka)</option>
+        <option value="SK">Slovaque (Slovaquie)</option>
+        <option value="SI">Slovène (Slovénie)</option>
+        <option value="AR">Espagnol (Argentine)</option>
+        <option value="BO">Espagnol (Bolivie)</option>
+        <option value="CO">Espagnol (Colombie)</option>
+        <option value="CR">Espagnol (Costa Rica)</option>
+        <option value="CU">Espagnol (Cuba)</option>
+        <option value="DO">Espagnol (République dominicaine)</option>
+        <option value="EC">Espagnol (Équateur)</option>
+        <option value="SV">Espagnol (Salvador)</option>
+        <option value="GQ">Espagnol (Guinée équatoriale)</option>
+        <option value="GT">Espagnol (Guatemala)</option>
+        <option value="HN">Espagnol (Honduras)</option>
+        <option value="MX">Espagnol (Mexique)</option>
+        <option value="NI">Espagnol (Nicaragua)</option>
+        <option value="PA">Espagnol (Panama)</option>
+        <option value="PY">Espagnol (Paraguay)</option>
+        <option value="PE">Espagnol (Pérou)</option>
+        <option value="PR">Espagnol (Porto Rico)</option>
+        <option value="UY">Espagnol (Uruguay)</option>
+        <option value="US">Espagnol (États-Unis)</option>
+        <option value="VE">Espagnol (Venezuela)</option>
+        <option value="KE">Swahili (Kenya)</option>
+        <option value="TZ">Swahili (Tanzanie)</option>
+        <option value="SE">Suédois (Suède)</option>
+        <option value="IN">Tamoul (Inde)</option>
+        <option value="IN">Télougou (Inde)</option>
+        <option value="TH">Thaï (Thaïlande)</option>
+        <option value="TR">Turc (Turquie)</option>
+        <option value="UA">Ukrainien (Ukraine)</option>
+        <option value="UZ">Ouzbek (Ouzbékistan)</option>
+        <option value="VN">Vietnamien (Vietnam)</option>
+        <option value="ZA">Zoulou (Afrique du Sud)</option>
+      </select>
+
+
+      <label for="mic-select" id="mic-label">Microphone</label>
+      <select id="mic-select">
+        <option value="disabled">Disabled</option>
+      </select>
+
+
+      <label style="display:none;" id="camera-select-label" for="camera-select">Camera</label>
+      <select id="camera-select" style="display:none;">
+        <option value="disabled" selected>Disabled</option>
+      </select>
+      <label class="check">
+        <input id="flip" type="checkbox" />
+        <span></span>
+        <labelp id="flip-label">Activate camera</labelp>
+      </label>
+
+      <label id="multimedia-select-label" for="multimedia-select">Multimedia</label>
+
+      <select id="multimedia-select">
+        <option selected value="video">Screen Recorder</option>
+        <option value="audio">Audio Only</option>
+      </select>
+      <label style="display: none" class="check">
+        <input id="push" type="checkbox" />
+        <span></span>
+        <labelp id="push-label">Push for talk</labelp> (Ctrl+M)
+      </label>
+      <br />
+      <label class="check" style="display: none">
+        <input id="persistent" type="checkbox" />
+        <span></span>
+        <labelp id="hover-label">Toolbar on hovering</labelp>
+      </label>
+      <div class="" style="text-align: center">
+        <button id="record" class="record-disabled">
+          <i class="fa-solid fa-clapperboard-play"></i>Loading...
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="../js/libraries/jquery-3.5.1.min.js"></script>
+  <script src="../js/libraries/jquery.nice-select.min.js"></script>
+  <script src="../js/popup.js"></script>
+</body>
+
+</html>

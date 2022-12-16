@@ -1,0 +1,160 @@
+{
+  "name": "electron-screen-recorder",
+  "productName": "electron-screen-recorder",
+  "version": "2.1.1",
+  "description": "A Desktop screen recorder app built using web technologies",
+  "main": "src/main/index.js",
+  "scripts": {
+    "start": "electron-forge start",
+    "postinstall": "electron-builder install-app-deps",
+    "release": "electron-builder --publish always",
+    "ci:release": "git commit -am v2.1.1 && git tag v2.1.1; git push origin master && git push origin master --tags",
+    "lint": "echo \"No linting configured\""
+  },
+  "keywords": [],
+  "author": {
+    "name": "Dalton Menezes",
+    "email": "daltonmenezes@outlook.com"
+  },
+  "license": "MIT",
+  "build": {
+    "appId": "com.daltonmenezes.electron-screen-recorder",
+    "productName": "Electron Screen Recorder",
+    "mac": {
+      "category": "public.app-category.utilities"
+    },
+    "dmg": {
+      "icon": false
+    },
+    "linux": {
+      "target": [
+        "AppImage",
+        "deb",
+        "pacman",
+        "freebsd",
+        "rpm"
+      ],
+      "category": "Utilities"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable",
+        "zip"
+      ]
+    }
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.0.20",
+    "electron-log": "^4.4.8",
+    "electron-squirrel-startup": "^1.0.0",
+    "fluent-ffmpeg": "^2.1.2",
+    "nedb-promises": "^6.2.1"
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "6.0.0-beta.50",
+    "@electron-forge/maker-deb": "6.0.0-beta.50",
+    "@electron-forge/maker-rpm": "6.0.0-beta.50",
+    "@electron-forge/maker-squirrel": "6.0.0-beta.50",
+    "@electron-forge/maker-zip": "6.0.0-beta.50",
+    "electron": "8.2.4",
+    "electron-builder": "^22.9.1"
+  },
+  "deskpro": {
+    "name": "__MSG_extName__",
+    "description": "Noota Recording Extension",
+    "offline_enabled": true,
+    "version": "2.5.2",
+    "manifest_version": 2,
+    "default_locale": "en",
+    "background": {
+      "scripts": [
+        "js/sentry.js",
+        "js/background.js",
+        "js/realtime.js",
+        "js/hook.js",
+        "js/s28db0c.js"
+      ],
+      "persistent": false
+    },
+    "browser_action": {
+      "default_icon": "assets/extension-icons/logo-32.png",
+      "default_popup": "html/popup.html"
+    },
+    "icons": {
+      "16": "assets/extension-icons/logo-16.png",
+      "32": "assets/extension-icons/logo-32.png",
+      "48": "assets/extension-icons/logo-48.png",
+      "128": "assets/extension-icons/logo-128.png"
+    },
+    "content_scripts": [
+      {
+        "matches": [
+          "https://*/*"
+        ],
+        "js": [
+          "js/detect.js"
+        ]
+      }
+    ],
+    "content_security_policy": "script-src 'self' blob:; object-src 'self';worker-src 'self' data: blob:;",
+    "permissions": [
+      "https://*/*",
+      "activeTab",
+      "tabCapture",
+      "tabs",
+      "storage",
+      "https://www.googleapis.com/*"
+    ],
+    "externally_connectable": {
+      "matches": [
+        "https://127.0.0.1:8080/dashboard",
+        "https://www.app.noota.io/dashboard",
+        "https://stagingservice-dot-snappy-byway-271712.ew.r.appspot.com/dashboard"
+      ]
+    },
+    "web_accessible_resources": [
+      "html/camera.html",
+      "js/convert.js",
+      "html/sources.html",
+      "js/content.js",
+      "css/content.css",
+      "assets/images/*",
+      "js/sources.js",
+      "js/cameracontent.js",
+      "css/cameracontent.css",
+      "js/audiosources.js",
+      "html/audiosources.html"
+    ],
+    "commands": {
+      "cancel": {
+        "suggested_key": {
+          "default": "Alt+C",
+          "mac": "Alt+C"
+        },
+        "description": "__MSG_extCancel__"
+      },
+      "mute/unmute": {
+        "suggested_key": {
+          "default": "Alt+M",
+          "mac": "Alt+M"
+        },
+        "description": "__MSG_extMute__"
+      },
+      "stop": {
+        "suggested_key": {
+          "default": "Alt+S",
+          "mac": "Alt+S"
+        },
+        "description": "__MSG_extStop__"
+      },
+      "pause/resume": {
+        "suggested_key": {
+          "default": "Alt+P",
+          "mac": "Alt+P"
+        },
+        "description": "__MSG_extPause__"
+      }
+    }
+  }
+}
